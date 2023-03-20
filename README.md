@@ -1,4 +1,4 @@
-## TOPIC REGISTRATION PROJECT
+> ## Object-Oriented Software Design Project
 
 [![My Skills](https://skillicons.dev/icons?i=java,html,css,js,jquery,mysql,maven,eclipse,vim,github,stackoverflow)](https://skillicons.dev)
 
@@ -12,14 +12,14 @@
 ### 1. Overview
 
 #### 1.1.  Technology used
-   > - [x] [HTML 5](https://www.w3schools.com/html/) 
-   > - [x] [CSS 3](https://www.w3schools.com/css/default.asp)
-   > - [x] [JavaScript](https://www.w3schools.com/js/)
-   > - [x] [JQuery](https://www.w3schools.com/jquery/)
-   > - [x] [JSP](https://www.javatpoint.com/jsp-tutorial)
-   > - [x] [Java Servlet](https://www.javatpoint.com/servlet-tutorial)
-   > - [x] [Heroku](https://dashboard.heroku.com/)
-   > - [x] [AWS](https://aws.amazon.com/)
+- [x] [HTML 5](https://www.w3schools.com/html/) 
+- [x] [CSS 3](https://www.w3schools.com/css/default.asp)
+- [x] [JavaScript](https://www.w3schools.com/js/)
+- [x] [JQuery](https://www.w3schools.com/jquery/)
+- [x] [JSP](https://www.javatpoint.com/jsp-tutorial)
+- [x] [Java Servlet](https://www.javatpoint.com/servlet-tutorial)
+- [x] [Heroku](https://dashboard.heroku.com/)
+- [x] [AWS](https://aws.amazon.com/)
    
 #### 1.2. Topic specification
 
