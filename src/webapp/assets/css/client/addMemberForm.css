@@ -1,0 +1,148 @@
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+.form__contain {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	background-color: #f4f3f3;
+}
+
+.form__contain form {
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+	padding: 36px;
+	background-color: #fff;
+	width: 600px;
+}
+
+.form__contain h1 {
+	text-transform: uppercase;
+	text-align: center;
+	margin-bottom: 24px;
+	font-weight: 700;
+}
+
+.form__contain p {
+	margin-bottom: 12px;
+}
+
+.form__contain input[type=text], .form__contain select, .form__contain option
+	{
+	padding: 10px;
+	display: inline-block;
+	border: none;
+	background: #F5F5F5;
+	margin: 5px 0 22px 0;
+	outline: none;
+}
+
+.form__contain input[type=text] {
+	width: 97%;
+}
+
+.form__contain select, .form__contain option {
+	width: 100%;
+}
+
+.form__contain hr {
+	border: 1px solid #e6e6e6;
+	margin-bottom: 5px;
+}
+
+.form__contain .registerbutton {
+	background-color: #58ADE5;
+	color: white;
+	padding: 15px 20px;
+	margin: 10px 0px;
+	border: none;
+	cursor: pointer;
+	width: 100%;
+	font-size: 16px;
+}
+
+.form__contain .registerbutton:hover {
+	background-color: rgb(49, 49, 248);
+}
+
+/* join group */
+.join__group-container-item {
+	border: 1px solid grey;
+	margin-top: 12px;
+	padding-left: 8px;
+}
+
+.join__group-container-item table tr th {
+	text-align: start;
+}
+
+.join__group-container-item:first-child table tr th {
+	color: var(- -white-color);
+	font-weight: 800;
+}
+
+.join__group-container-item table tr th:last-child {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+.join__group-container-item table tr th:last-child a {
+	margin-left: 12px;
+	font-size: 22px;
+	color: green;
+}
+
+.join__group-container-item table tr th:last-child a:last-child {
+	color: red;
+}
+
+table {
+	width: 100%;
+}
+
+table tr th {
+	color: var(- -text-color);
+	font-size: 14px;
+	font-weight: 400;
+	height: 32px;
+	padding-right: 10px;
+}
+
+table tr th a {
+	text-decoration: none;
+	font-size: 14px;
+	font-weight: 400;
+}
+
+.highlight_content {
+	color: #A555EE;
+}
+
+.bold_content {
+	font-weight: 600;
+}
+
+.hide_element {
+	visibility: hidden;
+}
+
+h3 {
+	font-weight: 600;
+	color: var(- -orange-color);
+	margin-top: 24px;
+}
+
+.teacher__memeber-heading {
+	display: flex;
+	align-items: flex-end;
+	justify-content: space-between;
+}
+
+.teacher__memeber-heading>a {
+	font-size: 1.4rem;
+	text-decoration: none;
+}

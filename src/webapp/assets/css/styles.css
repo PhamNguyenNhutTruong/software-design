@@ -1,0 +1,17 @@
+@charset "UTF-8";
+@import url('./partials/rootVariables.css');
+@import url('./partials/base.css');
+@import url('./partials/header.css');
+@import url('./partials/footer.css');
+
+/* Pages */
+@import url('./login.css');
+@import url('./client/home.css');
+@import url('./client/sidebar.css');
+@import url('./client/topicRegistration.css');
+@import url('./client/groupManage.css');
+@import url('./client/addMemberForm.css');
+@import url('./client/studentInfo.css');
+@import url('./client/teacherTopicDetail.css');
+@import url('./client/teacherBoard.css');
+

@@ -1,0 +1,16 @@
+@charset "UTF-8";
+:root {
+    --nav-height: 160px;
+    --nav-width: 972px;
+    --button-width: 140px;
+    --button-height: 32px;
+    --text-color: #000;
+    --text-blue-color: #00649D;
+    --white-color: #fff;
+    --nav-background-color: #599FE7;
+    --header-background-color: #00558D;
+    --nav-border-color: #356DC0;
+    --login-background-color:#E7EFFF;
+    --border-color: #ccc;
+    --orange-color: #fc633c;
+}

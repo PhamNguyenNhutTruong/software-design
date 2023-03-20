@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.2"
+	xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
+	<persistence-unit name="CoursesRegistrationApp"
+		transaction-type="RESOURCE_LOCAL">
+		<class>com.courses.models.Account</class>
+		<class>com.courses.models.Admin</class>
+		<class>com.courses.models.Board</class>
+		<class>com.courses.models.GroupStudent</class>
+		<class>com.courses.models.JoinGroup</class>
+		<class>com.courses.models.JoinGroupPK</class>
+		<class>com.courses.models.Major</class>
+		<class>com.courses.models.Notification</class>
+		<class>com.courses.models.Person</class>
+		<class>com.courses.models.RegistrationPeriod</class>
+		<class>com.courses.models.Student</class>
+		<class>com.courses.models.Teacher</class>
+		<class>com.courses.models.TeacherBoard</class>
+		<class>com.courses.models.TeacherBoardPK</class>
+		<class>com.courses.models.Topic</class>
+		<properties>
+			<!-- Configuring JDBC properties -->
+
+			<!-- Hibernate properties -->
+			<property name="hibernate.dialect"
+				value="org.hibernate.dialect.MySQLDialect" />
+			<!-- <property name="hibernate.show_sql" value="true" /> <property name="hibernate.format_sql" 
+				value="true"/> -->
+			<!-- batching size -->
+			<property name="hibernate.jdbc.batch_size" value="30" />
+			<property name="hibernate.order_inserts" value="true" />
+			<property name="hibernate.order_updates" value="true" />
+			<property name="hibernate.jdbc.batch_versioned_data"
+				value="true" />
+
+			<!-- Configuring JDBC properties -->
+			<property name="javax.persistence.jdbc.url"
+				value="jdbc:mysql://localhost:3306/topicregistration" />
+			<property name="javax.persistence.jdbc.user" value="root" />
+			<property name="javax.persistence.jdbc.password"
+				value="201102" />
+			<property name="javax.persistence.jdbc.driver"
+				value="com.mysql.jdbc.Driver" />
+		</properties>
+	</persistence-unit>
+</persistence>

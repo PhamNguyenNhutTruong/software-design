@@ -1,0 +1,163 @@
+@charset "UTF-8";
+
+/* grid_column_3 */
+.topic_registration {
+    display: flex;
+    align-items: center;
+    height: 48px;
+    background-color: var(--login-background-color);
+    border: 1px solid var(--border-color);
+}
+
+.topic_registration ion-icon {
+    font-size: 2rem;
+    color: var(--text-blue-color);
+    padding: 0 8px;
+}
+
+.topic_registration h3 {
+    color: var(--text-blue-color);
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+
+.topic_registration-filter-active {
+    background-color: var(--white-color);
+}
+
+.topic_registration-filter h3:first-child {
+    margin-right: 24px;
+}
+
+
+/* avai */
+.group_topic_registration-to-manage {
+    border: 1px solid var(--nav-background-color);
+    margin-top: 12px;
+    padding-left: 8px;
+}
+
+.group_topic_registration-to-manage:first-child {
+    background-color: var(--nav-border-color);
+    border-radius: 4px;
+}
+
+.group_topic_registration-to-manage table tr th {
+    text-align: start;
+}
+
+.group_topic_registration-to-manage:first-child table tr th {
+    color: var(--white-color);
+    font-weight: 500;
+}
+
+table {
+    width: 100%;
+}
+
+
+table tr th {
+    color: var(--text-color);
+    font-size: 1.6rem;
+    font-weight: 400;
+    height: 32px;
+    padding-right: 10px;
+}
+
+table tr th a {
+    text-decoration: none;
+    font-size: 1.6rem;
+    font-weight: 400;
+}
+
+.highlight_content {
+    color: #A555EE;
+}
+
+.bold_content {
+    font-weight: 600;
+}
+
+.hide_element {
+    visibility: hidden;
+}
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-size: cover;
+    height: 100vh;
+}
+
+
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.overlay:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.popup {
+    margin: 70px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    width: 30%;
+    position: relative;
+    transition: all 5s ease-in-out;
+}
+
+.popup h2 {
+    margin-top: 0;
+    color: var(--nav-border-color);
+    font-family: Tahoma, Arial, sans-serif;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+.popup div {
+    margin-top: 12px;
+}
+
+.popup .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+}
+
+.popup .close:hover {
+    color: var(--nav-border-color);
+}
+
+.popup .content {
+    max-height: 30%;
+    overflow: auto;
+}
+
+@media screen and (max-width: 700px) {
+    .box {
+        width: 70%;
+    }
+
+    .popup {
+        width: 70%;
+    }
+}

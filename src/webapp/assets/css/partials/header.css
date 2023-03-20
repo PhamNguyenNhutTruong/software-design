@@ -1,0 +1,80 @@
+@charset "UTF-8";
+#header {
+    height: var(--nav-height);
+    background-color: var(--nav-background-color);
+	position: relative;
+}
+
+#header::before, 
+#header::after {
+	position: absolute;	
+	content: "";
+	left: 0;
+	right: 0;
+	height: 6px;
+	background-color: var(--nav-background-color);
+}
+#header::before {
+	top: 0;
+}
+
+#header::after {
+	bottom: 0;
+}
+
+.nav {
+    background: url('http://dkdt.fit.hcmute.edu.vn/Content/public/images/desktop.jpg');
+    width: var(--nav-width);
+    height: var(--nav-height);
+    background-size: 100% 100%;
+    margin: 0 auto;
+}
+
+.header_login {
+    background-color: var(--header-background-color);
+    padding: 4px 0;
+}
+
+.header_login button {
+    float: right;
+    color: var(--white-color);
+    font-size: 1.6rem;
+    font-weight: 500;
+    height: var(--button-height);
+    min-width: var(--button-width);
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    background-color: #58ADe5;
+    cursor: pointer;
+}
+
+.header_login-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.header_login-container button {
+    color: var(--white-color);
+    font-size: 1.6rem;
+    font-weight: 500;
+    height: var(--button-height);
+    min-width: var(--button-width);
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    background-color: #58ADe5;
+    cursor: pointer;
+}
+
+.header_login-container div {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-right: 24px;
+    color: #FFFF00;
+}
+
+.login-name__container {
+	display: flex;
+	justify-content: flex-end;
+}
