@@ -7,7 +7,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.courses.dao.RegistrationPeriodDAO;
 import com.courses.services.RegistrationPriodService;
 
 @WebServlet(urlPatterns = { "/admin/registration-priods", "/admin/registration-priods/" })

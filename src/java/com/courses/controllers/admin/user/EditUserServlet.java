@@ -7,7 +7,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.courses.services.admin.user.StudentService;
 import com.courses.services.admin.user.UserService;
 
 @WebServlet(urlPatterns = { "/admin/users/edit", "/admin/users/edit/" })

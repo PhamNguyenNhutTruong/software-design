@@ -1,9 +1,6 @@
 package com.courses.controllers.client.head.approvalTopic;
 
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -11,9 +8,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.hibernate.query.criteria.internal.expression.ConcatExpression;
-
-import com.courses.dao.PersonDAO;
 import com.courses.dao.TopicDAO;
 import com.courses.models.Teacher;
 import com.courses.models.Topic;

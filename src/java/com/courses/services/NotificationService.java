@@ -120,12 +120,11 @@ public class NotificationService extends SuperService {
 		HashMap<String, Object> map = new HashMap<String, Object>();
 		map.put("person2", receivedPerson);
 		notifications = notificationDAO.findWithNamedQuery("Notification.getNotificationsByPerson", map);
-		System.out.println(notifications);
-		if (notifications != null) {
-			for (Notification n : notifications) {
-				System.out.println(n.getContent());
-			}
-		}
+//		if (notifications != null) {
+//			for (Notification n : notifications) {
+//				System.out.println(n.getContent());
+//			}
+//		}
 		this.request.setAttribute("notifications", notifications);
 	}
 

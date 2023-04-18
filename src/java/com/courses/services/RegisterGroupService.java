@@ -38,7 +38,6 @@ public class RegisterGroupService extends SuperService {
 		
 		Map<String, Object> map = new HashMap<String, Object>();
 		
-		String renderUI = "";
 		String isCreateGroup = "";
 		
 		registerGroupService.setEncoding();
@@ -70,10 +69,8 @@ public class RegisterGroupService extends SuperService {
 				student.setGroupstudent(groupStudent);
 				studentDAO.update(student);
 				isCreateGroup = "SUCCESS";
-				renderUI = "NOT NULL";
 			} else {
 				isCreateGroup = "FAILED";
-				renderUI = "NOT NULL";
 			}
 			this.request.setAttribute("isCreateGroup", isCreateGroup);
 			this.request.setAttribute("uiGroupManage", students);

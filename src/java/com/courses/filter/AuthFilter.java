@@ -20,6 +20,7 @@ import com.courses.models.Student;
 import com.courses.models.Teacher;
 import com.courses.services.StudentService;
 import com.courses.services.TeacherService;
+import com.courses.utils.constants.RoleConstants;
 
 
 @WebFilter(urlPatterns = {"/student/*", "/teacher/*"})
@@ -66,13 +67,11 @@ public class AuthFilter extends HttpFilter implements Filter {
 					// save user information to that session
 					session.setAttribute("person", person);
 					// find specified user then save information into the session
-					if (person.getRole().equals("student")) {
-						Student student = null;
-						student = StudentService.getStudentByPerson(person);
+					if (person.getRole().equals(RoleConstants.STUDENT)) {
+						Student student = StudentService.getStudentByPerson(person);
 						session.setAttribute("student", student);
-					}else if (person.getRole().equals("teacher")){
-						Teacher teacher = null;
-						teacher = TeacherService.getTeacherByPerson(person);
+					}else if (person.getRole().equals(RoleConstants.TEACHER)){
+						Teacher teacher = TeacherService.getTeacherByPerson(person);
 						session.setAttribute("teacher", teacher);
 					}
 					// action on goal page

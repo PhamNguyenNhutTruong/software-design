@@ -214,7 +214,6 @@ public class UserService extends SuperService {
 	
 	
 	public void restoreUser() throws ServletException, IOException {
-		String pageUrl = "/pages/admin/user/trashUser.jsp";
 		String isRestoreUser = "FAILED";
 		String id = this.request.getParameter("id");
 		String userType = this.request.getParameter("type");
@@ -258,7 +257,6 @@ public class UserService extends SuperService {
 			}
 
 		} catch (Exception e) {
-			pageUrl = "/pages/500.jsp";
 		}
 		this.request.setAttribute("type", userType);
 		this.request.setAttribute("isRestoreUser", isRestoreUser);

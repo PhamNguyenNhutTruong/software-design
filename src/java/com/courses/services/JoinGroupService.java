@@ -9,8 +9,6 @@ import java.util.Map;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-
 import com.courses.dao.JoinGroupDAO;
 import com.courses.dao.StudentDAO;
 import com.courses.models.GroupStudent;

@@ -292,9 +292,7 @@ public class GroupService extends SuperService {
 		List<GroupStudent> groupStudents = new ArrayList<GroupStudent>();
 		Map<String, Object> map = new HashMap<>();
 		String isChangeTopic = "FAILED";
-		String url = "/pages/client/student/groupManage.jsp";
-		
-//		String username = studentService.getStudentByPersonToLoginData().getPerson().getEmail();
+		//		String username = studentService.getStudentByPersonToLoginData().getPerson().getEmail();
 		String studentId = studentService.getStudentByPersonToLoginData().getStudentId();
 //		Kiểm tra xem đó có phải là trưởng nhóm hay không. Nếu phải thì mới cho clear checkLeader
 		groupStudents = checkRole(studentId);

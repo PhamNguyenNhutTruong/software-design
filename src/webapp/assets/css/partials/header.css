@@ -1,33 +1,27 @@
 @charset "UTF-8";
 #header {
-    height: var(--nav-height);
-    background-color: var(--nav-background-color);
 	position: relative;
-}
-
-#header::before, 
-#header::after {
-	position: absolute;	
-	content: "";
-	left: 0;
-	right: 0;
-	height: 6px;
-	background-color: var(--nav-background-color);
-}
-#header::before {
-	top: 0;
-}
-
-#header::after {
-	bottom: 0;
+	background-color: #f6f6f6;
 }
 
 .nav {
-    background: url('http://dkdt.fit.hcmute.edu.vn/Content/public/images/desktop.jpg');
     width: var(--nav-width);
     height: var(--nav-height);
-    background-size: 100% 100%;
     margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.image_left {
+    background: #f6f6f6 url('https://fit.hcmute.edu.vn/Resources/Images/SubDomain/fit/logo-news.png') no-repeat left top;
+    width: 600px;
+}
+
+.image_right {
+    background: #f6f6f6 url('https://fit.hcmute.edu.vn/Resources/Images/SubDomain/fit/logo-cntt2021.png') no-repeat right top;
+    background-size: cover;
+    width: 150px;
+    height: 120px;
 }
 
 .header_login {

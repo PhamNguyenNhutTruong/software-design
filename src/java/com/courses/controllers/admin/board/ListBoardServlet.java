@@ -7,7 +7,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.courses.models.Board;
 import com.courses.services.BoardService;
 
 @WebServlet(urlPatterns = { "/admin/boards", "/admin/boards/" })

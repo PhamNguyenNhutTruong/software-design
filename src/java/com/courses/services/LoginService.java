@@ -72,7 +72,6 @@ public class LoginService extends SuperService {
 					
 					// define user id cookie timeout 30'
 					Cookie c = new Cookie("userIdCookie", person.getPersonId());
-				
 					// 30 min
 					c.setMaxAge(30 * 60);
 					c.setPath("/");
@@ -89,8 +88,6 @@ public class LoginService extends SuperService {
 						// forward to admin home page
 						url = "/admin/";
 					}
-					
-
 				} else {
 					// exist account but incorrect password was found
 					url = "/pages/client/login.jsp";

@@ -2,8 +2,6 @@ package com.courses.services;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
-import java.util.Random;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

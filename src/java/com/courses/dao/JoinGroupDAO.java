@@ -49,7 +49,6 @@ public class JoinGroupDAO extends JpaDAO<JoinGroup> implements GenericDAO<JoinGr
 
 	@Override
 	public int count() {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 

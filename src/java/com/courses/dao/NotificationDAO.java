@@ -50,7 +50,6 @@ public class NotificationDAO extends JpaDAO<Notification> implements GenericDAO<
 
 	@Override
 	public int count() {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 	

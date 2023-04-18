@@ -43,13 +43,11 @@ public class TopicDAO extends JpaDAO<Topic> implements GenericDAO<Topic> {
 
 	@Override
 	public List<Topic> pagination(int currentPage, int pageSize) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public int count() {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 	

@@ -62,13 +62,11 @@ public class RegistrationPeriodDAO extends JpaDAO<RegistrationPeriod> implements
 
 	@Override
 	public List<RegistrationPeriod> pagination(int currentPage, int pageSize) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public int count() {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 

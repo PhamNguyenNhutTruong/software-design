@@ -7,7 +7,10 @@ String context = request.getContextPath();
 
 <header>
 	<div id="header">
-		<div class="nav"></div>
+		<div class="nav">
+			<div class="image_left"></div>	
+			<div class="image_right"></div>	
+		</div>
 	</div>
 	<div class="header_login">
 		<div class="grid">
