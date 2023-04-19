@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.courses.dao.GroupStudentDAO;
 import com.courses.dao.StudentDAO;
 import com.courses.models.Person;
 import com.courses.models.Student;
@@ -17,8 +16,6 @@ import com.courses.services.admin.user.PersonService;
 
 public class StudentService extends SuperService{
 	private static StudentDAO studentDAO = new StudentDAO();
-	private static GroupStudentDAO groupDAO = new GroupStudentDAO();
-	
 	public StudentService(HttpServletRequest request, HttpServletResponse response) {
 		super(request, response);
 	}

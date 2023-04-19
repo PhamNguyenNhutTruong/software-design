@@ -19,7 +19,6 @@ public class TeacherDetailTopicServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String url = "/pages/client/teacher/detailTopic.jsp";
 		TopicService topicService = new TopicService(request, response);
 		topicService.getGroupRegisteredTopic();
 	}

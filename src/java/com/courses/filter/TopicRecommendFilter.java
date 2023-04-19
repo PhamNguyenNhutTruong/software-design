@@ -22,6 +22,11 @@ public class TopicRecommendFilter extends HttpFilter implements Filter {
        
     
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public TopicRecommendFilter() {
         super();
     }

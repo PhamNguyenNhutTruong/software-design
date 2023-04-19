@@ -63,7 +63,6 @@ public class AccountDAO extends JpaDAO<Account> implements GenericDAO<Account> {
 
 	@Override
 	public int count() {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 	

@@ -10,12 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.hibernate.internal.build.AllowSysOut;
-
 import com.courses.dao.BoardDAO;
-import com.courses.dao.GroupStudentDAO;
 import com.courses.models.Board;
-import com.courses.models.Topic;
 
 public class BoardService extends SuperService {
 
@@ -34,8 +30,8 @@ public class BoardService extends SuperService {
 		super.setEncoding();
 		String pageUrl = "/pages/admin/board/board.jsp";
 		try {
-			String semester = this.request.getParameter("semester");
-			String year = this.request.getParameter("year");
+			this.request.getParameter("semester");
+			this.request.getParameter("year");
 			Map<String, Object> map = new HashMap<>();
 			map.put("isDeleted", (byte)0);
 			List<Board> boards = this.boardDAO.findWithNamedQuery("Board.getListBoardWithCondiotionDeleted", map);
@@ -57,8 +53,8 @@ public class BoardService extends SuperService {
 		super.setEncoding();
 		String pageUrl = "/pages/admin/board/board.jsp";
 		try {
-			String semester = this.request.getParameter("semester");
-			String year = this.request.getParameter("year");
+			this.request.getParameter("semester");
+			this.request.getParameter("year");
 			Map<String, Object> map = new HashMap<>();
 			map.put("isDeleted", (byte)1);
 			List<Board> boardsIdDeleted = this.boardDAO.findWithNamedQuery("Board.getListBoardWithCondiotionDeleted", map);

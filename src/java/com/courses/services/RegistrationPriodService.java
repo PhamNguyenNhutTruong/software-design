@@ -1,7 +1,6 @@
 package com.courses.services;
 
 import java.io.IOException;
-import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -13,7 +12,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.courses.dao.GroupStudentDAO;
 import com.courses.dao.RegistrationPeriodDAO;
 import com.courses.models.RegistrationPeriod;
 import com.courses.utils.constants.RoleConstants;
@@ -209,7 +207,7 @@ public class RegistrationPriodService extends SuperService {
 		HttpSession session = this.request.getSession();
 		try {
 			String type = this.request.getParameter("type");
-			String id = this.request.getParameter("id");
+			this.request.getParameter("id");
 			RegistrationPeriodDAO registrationPeriodDAO = new RegistrationPeriodDAO();
 			RegistrationPeriod registrationPeriod = new RegistrationPeriod();
 
@@ -264,7 +262,7 @@ public class RegistrationPriodService extends SuperService {
 			byte isRegistrationTeacher, Date openDate, Date closeDate, String description) {
 		try {
 			Date date = new Date();
-			Date currentDate = RandomUtils.convertStringToDate(RandomUtils.formatDate(date));
+			RandomUtils.convertStringToDate(RandomUtils.formatDate(date));
 			RegistrationPeriod registrationPeriod = new RegistrationPeriod();
 			RegistrationPeriodDAO registrationPeriodDAO = new RegistrationPeriodDAO();
 			Map<String, Object> map = new HashMap<>();

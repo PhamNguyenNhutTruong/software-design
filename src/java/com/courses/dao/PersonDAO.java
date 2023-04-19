@@ -4,11 +4,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-import javax.persistence.Query;
-
 import com.courses.models.Person;
 
 public class PersonDAO extends JpaDAO<Person> implements GenericDAO<Person>{
@@ -66,13 +61,11 @@ public class PersonDAO extends JpaDAO<Person> implements GenericDAO<Person>{
 
 	@Override
 	public List<Person> pagination(int currentPage, int pageSize) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public int count() {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 	

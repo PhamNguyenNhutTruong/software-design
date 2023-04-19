@@ -19,7 +19,6 @@ public class TeacherSeenNotificationServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String url = "/pages/client/teacher/home.jsp";
 		NotificationService ns = new NotificationService(request, response);
 		ns.updateStatusNotification();
 	}

@@ -3,7 +3,6 @@ package com.courses.dao;
 import java.util.List;
 import java.util.Map;
 
-import com.courses.models.Admin;
 import com.courses.models.Teacher;
 
 public class TeacherDAO extends JpaDAO<Teacher> implements GenericDAO<Teacher>{
@@ -44,13 +43,11 @@ public class TeacherDAO extends JpaDAO<Teacher> implements GenericDAO<Teacher>{
 
 	@Override
 	public List<Teacher> pagination(int currentPage, int pageSize) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public int count() {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 	

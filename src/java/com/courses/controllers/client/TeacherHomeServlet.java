@@ -20,6 +20,7 @@ public class TeacherHomeServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		System.out.println("hello teacher controller");
 		HomeService hs = new HomeService(request, response);
 		hs.handleGetTeacherHomeService();
 	}

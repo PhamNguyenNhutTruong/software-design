@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.courses.dao.GroupStudentDAO;
 import com.courses.dao.TeacherDAO;
 import com.courses.dao.TopicDAO;
 import com.courses.models.GroupStudent;
@@ -27,6 +26,7 @@ public class TopicService extends SuperService {
 	private static TopicDAO topicDAO = new TopicDAO();
 	private static GroupStudentDAO groupDAO = new GroupStudentDAO();
 	private static TeacherDAO teacherDAO = new TeacherDAO();
+	TeacherDAO teacherDAO = new TeacherDAO();
 
 	public TopicService(HttpServletRequest request, HttpServletResponse response) {
 		super(request, response);
@@ -60,7 +60,6 @@ public class TopicService extends SuperService {
 	public void registerTopic() throws ServletException, IOException {
 		String isRegistrationTopic = "";
 		try {
-			String context = request.getContextPath();
 			String url = "/student/topic-registration";
 			Topic topic = new Topic();
 			GroupService groupService = new GroupService(request, response);
@@ -114,7 +113,7 @@ public class TopicService extends SuperService {
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("is_selected", option);
 		List<Topic> topics = new ArrayList<Topic>();
-		topics = this.topicDAO.findWithNamedQuery("Topic.getTopicByConditionSelect", map);
+		topics = TopicService.topicDAO.findWithNamedQuery("Topic.getTopicByConditionSelect", map);
 		return topics;
 	}
 
@@ -191,14 +190,6 @@ public class TopicService extends SuperService {
 			url = "/pages/500.jsp";
 			super.redirectToPage(this.request.getContextPath() + url);
 		}
-	}
-
-	private List<Topic> findSelectedTopic(Byte isSelected) {
-		List<Topic> foundTopics = null;
-		Map<String, Object> map = new HashMap<String, Object>();
-		map.put("isSelected", isSelected);
-		foundTopics = topicDAO.findWithNamedQuery("Topic.findSelectedTopic", map);
-		return foundTopics;
 	}
 
 	public void getTeacherRecommendTopic() throws ServletException {

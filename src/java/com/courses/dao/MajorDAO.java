@@ -43,13 +43,11 @@ public class MajorDAO extends JpaDAO<Major> implements GenericDAO<Major>{
 
 	@Override
 	public List<Major> pagination(int currentPage, int pageSize) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public int count() {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 	

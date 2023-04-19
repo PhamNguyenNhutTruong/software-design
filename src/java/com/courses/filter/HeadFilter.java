@@ -18,6 +18,7 @@ import com.courses.dao.PersonDAO;
 import com.courses.models.Person;
 import com.courses.models.Teacher;
 import com.courses.services.TeacherService;
+import com.courses.utils.constants.RoleConstants;
 
 @WebFilter(urlPatterns = { "/tesst-haha"})
 //@WebFilter(urlPatterns = { "/teacher/approval/*", "/teacher/board/head/*" })
@@ -58,10 +59,10 @@ public class HeadFilter extends HttpFilter implements Filter {
 			// Check user not null
 			if (person != null) {
 				// Check user is teacher
-				if (person.getRole().equals("teacher")) {
+				if (person.getRole().equals(RoleConstants.TEACHER)) {
 					Teacher teacher = TeacherService.getTeacherByPerson(person);
 					// Check head
-					if (teacher.getIsHead() == 1) {
+					if (teacher.getIsHead() == RoleConstants.HEAD) {
 						chain.doFilter(request, response);
 					} else {
 						response.sendRedirect(request.getContextPath() + "/teacher/home/");

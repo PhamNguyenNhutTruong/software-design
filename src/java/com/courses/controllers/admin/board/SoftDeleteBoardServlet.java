@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.courses.dao.BoardDAO;
 import com.courses.models.Board;
-import com.courses.models.Person;
 
 
 @WebServlet(urlPatterns = { "/admin/board/delete", "/admin/board/delete/" })

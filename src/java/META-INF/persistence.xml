@@ -20,8 +20,6 @@
 		<class>com.courses.models.TeacherBoardPK</class>
 		<class>com.courses.models.Topic</class>
 		<properties>
-			<!-- Configuring JDBC properties -->
-
 			<!-- Hibernate properties -->
 			<property name="hibernate.dialect"
 				value="org.hibernate.dialect.MySQLDialect" />
@@ -35,6 +33,8 @@
 				value="true" />
 
 			<!-- Configuring JDBC properties -->
+			<property name="javax.persistence.jdbc.driver"
+				value="com.mysql.jdbc.Driver" />
 			<property name="javax.persistence.jdbc.url"
 				value="jdbc:mysql://localhost:3306/topicregistration" />
 			<property name="javax.persistence.jdbc.user" value="root" />

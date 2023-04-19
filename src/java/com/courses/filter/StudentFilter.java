@@ -12,14 +12,10 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import com.courses.dao.PersonDAO;
 import com.courses.models.Person;
-import com.courses.models.Student;
-import com.courses.models.Teacher;
-import com.courses.services.StudentService;
-import com.courses.services.TeacherService;
+import com.courses.utils.constants.RoleConstants;
 
 /**
  * Servlet Filter implementation class AuthorizationFilter
@@ -29,7 +25,10 @@ import com.courses.services.TeacherService;
 public class StudentFilter extends HttpFilter implements Filter {
        
     
-    public StudentFilter() {
+	private static final long serialVersionUID = 1L;
+
+
+	public StudentFilter() {
         super();
     }
 
@@ -60,7 +59,8 @@ public class StudentFilter extends HttpFilter implements Filter {
 			PersonDAO personDAO = new PersonDAO();
 			person = personDAO.find(Person.class, personId);
 			if (person != null) {
-				if (person.getRole().equals("student")) {
+				if (person.getRole().equals(RoleConstants.STUDENT)) {
+				System.out.println("Student filter");
 					chain.doFilter(request, response);
 				}else {
 					res.sendRedirect(req.getContextPath() + "/pages/404.jsp");
