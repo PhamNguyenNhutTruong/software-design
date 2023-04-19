@@ -16,7 +16,8 @@ import javax.servlet.http.HttpSession;
 import com.courses.models.RegistrationPeriod;
 import com.courses.services.RegistrationPriodService;
 
-@WebFilter("/teacher/topic-manage/add")
+@WebFilter("/test-haha")
+//@WebFilter("/teacher/topic-manage/add")
 public class TopicRecommendFilter extends HttpFilter implements Filter {
        
     

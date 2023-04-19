@@ -24,7 +24,8 @@ import com.courses.services.TeacherService;
 /**
  * Servlet Filter implementation class AuthorizationFilter
  */
-@WebFilter(urlPatterns = {"/student/*"})
+@WebFilter(urlPatterns = {"/test-haha"})
+//@WebFilter(urlPatterns = {"/student/*"})
 public class StudentFilter extends HttpFilter implements Filter {
        
     
