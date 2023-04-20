@@ -15,15 +15,17 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.courses.dao.PersonDAO;
+import com.courses.models.Admin;
 import com.courses.models.Person;
 import com.courses.models.Student;
 import com.courses.models.Teacher;
 import com.courses.services.StudentService;
 import com.courses.services.TeacherService;
+import com.courses.services.admin.user.AdminService;
 import com.courses.utils.constants.RoleConstants;
 
 
-@WebFilter(urlPatterns = {"/student/*", "/teacher/*"})
+@WebFilter(urlPatterns = {"/student/*", "/teacher/*", "/admin/*"})
 public class AuthFilter extends HttpFilter implements Filter {
        
    
@@ -67,12 +69,16 @@ public class AuthFilter extends HttpFilter implements Filter {
 					// save user information to that session
 					session.setAttribute("person", person);
 					// find specified user then save information into the session
-					if (person.getRole().equals(RoleConstants.STUDENT)) {
+					switch (person.getRole()) {
+					case RoleConstants.STUDENT:
 						Student student = StudentService.getStudentByPerson(person);
 						session.setAttribute("student", student);
-					}else if (person.getRole().equals(RoleConstants.TEACHER)){
+						break;
+					case RoleConstants.TEACHER:
 						Teacher teacher = TeacherService.getTeacherByPerson(person);
 						session.setAttribute("teacher", teacher);
+						break;
+					
 					}
 					// action on goal page
 					chain.doFilter(request, response);
