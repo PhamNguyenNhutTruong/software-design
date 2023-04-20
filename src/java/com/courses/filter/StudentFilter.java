@@ -20,7 +20,8 @@ import com.courses.utils.constants.RoleConstants;
 /**
  * Servlet Filter implementation class AuthorizationFilter
  */
-@WebFilter(urlPatterns = {"/student/*"})
+@WebFilter(urlPatterns = {"/test-haha"})
+//@WebFilter(urlPatterns = {"/student/*"})
 public class StudentFilter extends HttpFilter implements Filter {
 	private static final long serialVersionUID = 1L;
 	private Cookie[] cookies;

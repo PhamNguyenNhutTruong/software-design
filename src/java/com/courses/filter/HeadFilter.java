@@ -20,7 +20,8 @@ import com.courses.models.Teacher;
 import com.courses.services.TeacherService;
 import com.courses.utils.constants.RoleConstants;
 
-@WebFilter(urlPatterns = { "/teacher/approval/*", "/teacher/board/head/*" })
+@WebFilter(urlPatterns = { "/tesst-haha"})
+//@WebFilter(urlPatterns = { "/teacher/approval/*", "/teacher/board/head/*" })
 public class HeadFilter extends HttpFilter implements Filter {
 
 	private static final long serialVersionUID = 1L;
