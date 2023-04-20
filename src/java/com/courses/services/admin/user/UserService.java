@@ -1,7 +1,11 @@
 package com.courses.services.admin.user;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -10,15 +14,23 @@ import javax.servlet.http.HttpSession;
 
 import com.courses.dao.AccountDAO;
 import com.courses.dao.AdminDAO;
+import com.courses.dao.GroupStudentDAO;
 import com.courses.dao.PersonDAO;
 import com.courses.dao.StudentDAO;
 import com.courses.dao.TeacherDAO;
+import com.courses.dao.TopicDAO;
 import com.courses.models.Account;
 import com.courses.models.Admin;
+import com.courses.models.GroupStudent;
 import com.courses.models.Person;
 import com.courses.models.Student;
 import com.courses.models.Teacher;
+import com.courses.models.TeacherBoard;
+import com.courses.models.Topic;
+import com.courses.services.StudentService;
 import com.courses.services.SuperService;
+import com.courses.services.TeacherService;
+import com.courses.services.TopicService;
 import com.courses.utils.constants.RoleConstants;
 
 public class UserService extends SuperService {
@@ -28,6 +40,8 @@ public class UserService extends SuperService {
 	TeacherDAO teacherDAO = null;
 	AdminDAO adminDAO = null;
 	AccountDAO accountDAO = null;
+	TopicDAO topicDAO = null;
+	GroupStudentDAO groupStudentDAO = null;
 
 	public UserService(HttpServletRequest request, HttpServletResponse response) {
 		super(request, response);
@@ -36,6 +50,8 @@ public class UserService extends SuperService {
 		this.teacherDAO = new TeacherDAO();
 		this.adminDAO = new AdminDAO();
 		this.accountDAO = new AccountDAO();
+		this.topicDAO = new TopicDAO();
+		this.groupStudentDAO = new GroupStudentDAO();
 	}
 	
 	public UserService() {}
@@ -210,6 +226,56 @@ public class UserService extends SuperService {
 		person = personService.getPersonByEmail(username);
 		this.request.setAttribute("person", person);
 		this.request.getRequestDispatcher(url).forward(request, response);
+	}
+	
+	public String softDeleteUser() throws IOException {
+		Person person = new Person();
+		Student student = new Student();
+		Teacher teacher = new Teacher();
+		List<Student> students = new ArrayList<>();
+		List<Topic> topics = new ArrayList<>();
+		List<TeacherBoard> teacherBoards = new ArrayList<>();
+		
+		StudentService studentService = new StudentService(request, response);
+		TeacherService teacherService = new TeacherService(request, response);
+		TopicService topicService = new TopicService(request, response);
+		TeacherBoardService teacherBoardService = new TeacherBoardService(request, response);
+		
+		boolean flag = false;
+		
+		String personId = request.getParameter("personId");
+		
+//		Get person
+		person = this.personDAO.find(personId);
+//		Kiểm tra xem user đó có vai trò là sinh viên hay là giảng viên
+		student = studentService.getStudentByPerson(person);
+		teacher = teacherService.getTeacherByPerson(person);
+		if(student != null) {
+//		Kiểm tra xem sinh viên đó đã có nhóm hay chưa --> Nếu chưa có nhóm --> Cho phép xóa sinh viên đó
+			Map<String, Object> map = new HashMap<String, Object>();
+			map.put("studentId", student.getStudentId());
+			students = studentService.checkStudentAndGroup(map);
+			if(students.size() != 0) {
+				flag = true;
+			}
+		}
+		
+		if(teacher != null) {
+//		Kiểm tra giáo viên đó có là chủ nhiệm của đề tài hay thuộc hội đồng nào hay không.
+			topics = topicService.getTopicByTeacher(teacher);
+			teacherBoards = teacherBoardService.findByTeacher(teacher);
+			if(topics.size() == 0 && teacherBoards.size() == 0) {
+				flag = true;
+			}
+			
+		}
+		
+		if(flag == true) {
+			person.setIsDeleted((byte) 1);
+			this.personDAO.update(person);
+			return "Success";
+		}
+		return "Failed";
 	}
 	
 	

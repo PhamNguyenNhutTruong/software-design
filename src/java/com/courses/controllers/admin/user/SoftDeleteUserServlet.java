@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.courses.dao.PersonDAO;
 import com.courses.models.Person;
+import com.courses.models.Student;
+import com.courses.services.admin.user.UserService;
 
 @WebServlet(urlPatterns = { "/admin/users/delete", "/admin/users/delete/" })
 public class SoftDeleteUserServlet extends HttpServlet {
@@ -26,17 +28,10 @@ public class SoftDeleteUserServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		try {
-		String personId = request.getParameter("personId");
-
-		// Get person
-		Person p = this.personDAO.find(personId);
-		if (p != null) {
-			p.setIsDeleted((byte) 1);
-			this.personDAO.update(p);
-			
+			UserService userService = new UserService(request, response);
+			String result = userService.softDeleteUser();
 			PrintWriter pw = response.getWriter();
-			pw.append("Delete User Success");
-		}
+			pw.append(result);
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 			String url = "/pages/500.jsp";
