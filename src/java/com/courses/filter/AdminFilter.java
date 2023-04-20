@@ -15,17 +15,17 @@ import javax.servlet.http.HttpServletResponse;
 import com.courses.dao.PersonDAO;
 import com.courses.models.Person;
 import com.courses.services.HomeService;
+import com.courses.services.NotificationService;
 import com.courses.utils.constants.RoleConstants;
 
 /**
  * Servlet Filter implementation class AuthorizationFilter
  */
-@WebFilter(urlPatterns = {"/test-haha"})
-//@WebFilter(urlPatterns = {"/student/*"})
-public class StudentFilter extends HttpFilter implements Filter {
+@WebFilter(urlPatterns = {"/admin/*"})
+public class AdminFilter extends HttpFilter implements Filter {
 	private static final long serialVersionUID = 1L;
 	private Cookie[] cookies;
-	public StudentFilter() {
+	public AdminFilter() {
         super();
     }
 
@@ -63,10 +63,10 @@ public class StudentFilter extends HttpFilter implements Filter {
 				res.sendRedirect(req.getContextPath() + "/teacher/home");
 				break;
 			case RoleConstants.ADMIN:
-				res.sendRedirect(req.getContextPath() + "/admin");
+				chain.doFilter(request, response);
 				break;
 			case RoleConstants.STUDENT:
-				chain.doFilter(request, response);
+				res.sendRedirect(req.getContextPath() + "/student/home");
 				break;
 		}
 	}

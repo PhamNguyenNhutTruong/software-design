@@ -4,7 +4,6 @@ import java.io.IOException;
 
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
-import javax.servlet.FilterConfig;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
@@ -16,6 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.courses.dao.PersonDAO;
 import com.courses.models.Person;
+import com.courses.services.NotificationService;
 import com.courses.utils.constants.RoleConstants;
 
 
@@ -25,12 +25,9 @@ public class TeacherFilter extends HttpFilter implements Filter {
   	private static final long serialVersionUID = 1L;
 	private Cookie[] cookies;
 
-
 	public TeacherFilter() {
         super();
-        
     }
-
 
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
@@ -62,25 +59,17 @@ public class TeacherFilter extends HttpFilter implements Filter {
 			res.sendRedirect(req.getContextPath() + "/login");
 			return;
 		}
-		
 		switch (person.getRole()) {
 			case RoleConstants.TEACHER:
 				chain.doFilter(request, response);
 				break;
 			case RoleConstants.ADMIN:
-				System.out.println("Hello Admin from teacher");
-				chain.doFilter(request, response);
+				res.sendRedirect(req.getContextPath() + "/admin");
 				break;
 			case RoleConstants.STUDENT:
-				break;
-			default:
+				res.sendRedirect(req.getContextPath() + "/student/home");
 				break;
 		}
-	}
-
-	
-	public void init(FilterConfig fConfig) throws ServletException {
-		
 	}
 
 }

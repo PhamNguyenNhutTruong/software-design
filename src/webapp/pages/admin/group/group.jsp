@@ -42,7 +42,9 @@ request.getContextPath(); %>
                           <td>${item.getGroupId()}</td>
                           <td>${item.getTopic().getTopicName()}</td>
                           <td>
+                          <c:if test="${item.getTopic() != null}">
                             ${item.getCurrentNumber()}/${item.getTopic().getMaxMoMember()}
+                          </c:if>
                           </td>
                           <td class="text-end">
                             <a
