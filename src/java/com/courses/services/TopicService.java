@@ -24,6 +24,8 @@ import com.courses.services.admin.user.StudentService;
 public class TopicService extends SuperService {
 
 	private static TopicDAO topicDAO = new TopicDAO();
+	private static GroupStudentDAO groupDAO = new GroupStudentDAO();
+	private static TeacherDAO teacherDAO = new TeacherDAO();
 	TeacherDAO teacherDAO = new TeacherDAO();
 
 	public TopicService(HttpServletRequest request, HttpServletResponse response) {
@@ -271,6 +273,14 @@ public class TopicService extends SuperService {
 			String pageUrl = "/pages/500.jsp";
 			this.request.getRequestDispatcher(pageUrl).forward(request, response);
 		}
+	}
+	
+	public List<Topic> getTopicByTeacher(Teacher teacher) {
+		List<Topic> topics = new ArrayList<>();
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		map.put("teacher", teacher);
+		topics = topicDAO.findWithNamedQuery("Topic.findTopicByTeacher", map);
+		return topics;
 	}
 
 }

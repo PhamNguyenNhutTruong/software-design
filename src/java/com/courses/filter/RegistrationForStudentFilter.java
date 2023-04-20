@@ -20,7 +20,8 @@ import com.courses.dao.RegistrationPeriodDAO;
 import com.courses.models.RegistrationPeriod;
 import com.courses.utils.helper.RandomUtils;
 
-@WebFilter(urlPatterns = { "/student/topic-registration/*", "/student/group-manage/*" })
+@WebFilter(urlPatterns = { "/test-haha"})
+//@WebFilter(urlPatterns = { "/student/topic-registration/*", "/student/group-manage/*" })
 public class RegistrationForStudentFilter extends HttpFilter implements Filter {
 
 	private static final long serialVersionUID = 1L;
@@ -51,7 +52,7 @@ public class RegistrationForStudentFilter extends HttpFilter implements Filter {
 			Date date = new Date();
 			Date currentDate = RandomUtils.convertStringToDate(RandomUtils.formatDate(date));
 
-			if (registrationPeriodActive != null && registrationPeriodActive.getIsRegistrationTeacher() == 0) {
+			if (registrationPeriodActive != null && registrationPeriodActive.getIsRegistrationTeacher() 	== 0) {
 				// Get open and close date
 				Date openDate = registrationPeriodActive.getOpenDate();
 				Date closeDate = registrationPeriodActive.getCloseDate();

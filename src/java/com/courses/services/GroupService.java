@@ -145,6 +145,33 @@ public class GroupService extends SuperService {
 		groupStudents = groupStudentDAO.findWithNamedQuery("GroupStudent.getGroupStudent", map);
 		return groupStudents;
 	}
+	
+	public int getNumberOfMemberNotDeleteInGroup(String groupId) {
+		int count = 0;
+		try {
+			List<GroupStudent> groupStudents = this.getGroupStudent();
+			List<Student> students = new ArrayList<>();
+			GroupStudent groupStudent = null;
+			for (GroupStudent gStudent : groupStudents) {
+				if(gStudent.getGroupId().equals(groupId)) {
+					groupStudent = gStudent;
+					break;
+				}
+			}
+			
+			StudentService studentService = new StudentService(request, response);
+			students = studentService.findStudentByGroup(groupStudent);
+			
+			for(Student student : students) {
+				if(student.getPerson().getIsDeleted() == 0) {
+					count ++;
+				}
+			}
+		} catch (Exception e) {
+			System.out.println("==================== " + e.getMessage() + " ====================");
+		}
+		return count;
+	}
 
 	public List<GroupStudent> checkRole(String studentId) {
 		Map<String, Object> map = new HashMap<String, Object>();
@@ -217,7 +244,8 @@ public class GroupService extends SuperService {
 				if (groupStudents.size() > 0) {
 					student = students.get(0);
 					groupStudent = groupStudents.get(0);
-					if (groupStudent.getTopic().getMaxMoMember() > groupStudent.getCurrentNumber()) {
+//				Kiểm tra xem số thành viên của đề tài có còn cho phép thêm mới hay không và kiểm tra sinh viên cần thêm mới có bị xóa đi hay không
+					if (groupStudent.getTopic().getMaxMoMember() > groupStudent.getCurrentNumber() && student.getPerson().getIsDeleted() == 0) {
 						groupStudent.setCurrentNumber(groupStudent.getCurrentNumber() + 1);
 						student.setGroupstudent(groupStudents.get(0));
 						groupStudentDAO.update(groupStudent);

@@ -37,10 +37,12 @@ public class Teacher implements Serializable {
 
 	//bi-directional many-to-one association to TeacherBoard
 	@OneToMany(mappedBy="teacher")
+//	@OneToMany(fetch = FetchType.EAGER, mappedBy="teacher",cascade = CascadeType.ALL)
 	private List<TeacherBoard> teacherboards;
 
 	//bi-directional many-to-one association to Topic
 	@OneToMany(mappedBy="teacher")
+//	@OneToMany(fetch = FetchType.EAGER, mappedBy="teacher",cascade = CascadeType.ALL)
 	private List<Topic> topics;
 
 	public Teacher() {
