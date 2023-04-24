@@ -239,7 +239,7 @@ public class UserService extends SuperService {
 		StudentService studentService = new StudentService(request, response);
 		TeacherService teacherService = new TeacherService(request, response);
 		TopicService topicService = new TopicService(request, response);
-		TeacherBoardService teacherBoardService = new TeacherBoardService(request, response);
+		teacherBoardService teacherBoardService = new TeacherBoardService(request, response);
 		
 		boolean flag = false;
 		
@@ -248,8 +248,6 @@ public class UserService extends SuperService {
 //		Get person
 		person = this.personDAO.find(personId);
 //		Kiểm tra xem user đó có vai trò là sinh viên hay là giảng viên
-		student = studentService.getStudentByPerson(person);
-		teacher = teacherService.getTeacherByPerson(person);
 		if(student != null) {
 //		Kiểm tra xem sinh viên đó đã có nhóm hay chưa --> Nếu chưa có nhóm --> Cho phép xóa sinh viên đó
 			Map<String, Object> map = new HashMap<String, Object>();
