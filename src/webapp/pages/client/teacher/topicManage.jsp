@@ -100,7 +100,7 @@ String check = (String) request.getAttribute("notExistPeriod");
 			</div>
 		</main>
 		<input id="deletedTopicStatus"
-			value="${sessionScope.deletedTopicStatus}" hidden/>
+			value="${sessionScope.deletedTopicStatus}" hidden="true"/>
 		<!-- Modal -->
 		<jsp:include page="./periodModal.jsp" />
 		<jsp:include page="../partials/logoutModal.jsp" />

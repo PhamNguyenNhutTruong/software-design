@@ -15,7 +15,7 @@ String context = request.getContextPath();
 <body>
 	<div class="form__contain">
 		<form action="" method="POST">
-			<input name="boardId" value="${boardId}" hidden />
+			<input name="boardId" value="${boardId}" hidden="true" />
 			<h1>Register Group teacher</h1>
 			<p>Please fill in this form to create an group teacher for
 				registration board.</p>

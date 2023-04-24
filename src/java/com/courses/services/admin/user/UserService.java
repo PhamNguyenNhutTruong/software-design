@@ -1,7 +1,6 @@
 package com.courses.services.admin.user;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -21,7 +20,6 @@ import com.courses.dao.TeacherDAO;
 import com.courses.dao.TopicDAO;
 import com.courses.models.Account;
 import com.courses.models.Admin;
-import com.courses.models.GroupStudent;
 import com.courses.models.Person;
 import com.courses.models.Student;
 import com.courses.models.Teacher;
@@ -29,7 +27,6 @@ import com.courses.models.TeacherBoard;
 import com.courses.models.Topic;
 import com.courses.services.StudentService;
 import com.courses.services.SuperService;
-import com.courses.services.TeacherService;
 import com.courses.services.TopicService;
 import com.courses.utils.constants.RoleConstants;
 
@@ -237,9 +234,9 @@ public class UserService extends SuperService {
 		List<TeacherBoard> teacherBoards = new ArrayList<>();
 		
 		StudentService studentService = new StudentService(request, response);
-		TeacherService teacherService = new TeacherService(request, response);
+//		TeacherService teacherService = new TeacherService(request, response);
 		TopicService topicService = new TopicService(request, response);
-		teacherBoardService teacherBoardService = new TeacherBoardService(request, response);
+		TeacherBoardService teacherBoardService = new TeacherBoardService(request, response);
 		
 		boolean flag = false;
 		

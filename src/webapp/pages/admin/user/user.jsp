@@ -143,7 +143,7 @@ String title = type.substring(0, 1).toUpperCase() + type.substring(1);
 	</div>
 	
 	<input type="text" id="isRecoveryAll"
-		value="${sessionScope.isRecoveryAll}" hidden/>	
+		value="${sessionScope.isRecoveryAll}" hidden="true"/>	
 		
 	<jsp:include page="../partials/tail.jsp"></jsp:include>
 	<script type="text/javascript"

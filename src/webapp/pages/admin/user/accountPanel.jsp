@@ -6,9 +6,9 @@
 	aria-labelledby="account-tab">
 	<form method="POST" action="update-account">
 		<div class="col-md-6">
-			<input type="text" name="personId" hidden
+			<input type="text" name="personId" hidden="true"
 				value="${user.getPerson().getPersonId()}"> <input
-				type="text" name="type" value="${type}" hidden />
+				type="text" name="type" value="${type}" hidden="true" />
 			<div class="mb-3">
 				<label for="site-title" class="form-label">Username</label>
 				<c:choose>

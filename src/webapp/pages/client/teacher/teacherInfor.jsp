@@ -93,7 +93,7 @@ String context = request.getContextPath();
     </div>
 </main>
 	<!-- Modal update profile teacher-->
-	<div class="modal fade" id="updateProfile" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal fade" id="updateProfile" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"="true">
 	  <div class="modal-dialog">
 		<div class="modal-content">
 		  <div class="modal-header">
@@ -101,7 +101,7 @@ String context = request.getContextPath();
 			<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 		  </div>
 		  <div class="modal-body">
-			  <input type="text" hidden="true" class="form-control" id="personId"
+			  <input type="text" hidden="true"="true" class="form-control" id="personId"
 			  style="font-size: 14px" value="${person.getPersonId()}">
 			<div class="mb-3">
 			  <label for="fullname" class="form-label">Họ và tên</label>

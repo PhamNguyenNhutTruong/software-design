@@ -27,10 +27,10 @@ String title = type.substring(0, 1).toUpperCase() + type.substring(1);
 							<h3 class="d-flex justify-content-between">
 								<span>Trash</span>
 								<form action="<%=context %>/admin/users/trash/recovery" method="POST">
-									<input name="type" value="<%=type%>" hidden />
+									<input name="type" value="<%=type%>" hidden="true" />
 									<c:forEach var="item" items="${users}">
 										<c:if test="${item.getPerson().getIsDeleted() == 1}">
-											<input hidden value="${item.getPerson().getPersonId()}"
+											<input hidden="true" value="${item.getPerson().getPersonId()}"
 												name="personId" />
 										</c:if>
 									</c:forEach>
@@ -130,7 +130,7 @@ String title = type.substring(0, 1).toUpperCase() + type.substring(1);
 	</div>
 	
 	<input type="text" id="isRestoreUser"
-		value="${isRestoreUser}" hidden/>	
+		value="${isRestoreUser}" hidden="true"/>	
 		
 		
 	<jsp:include page="../partials/tail.jsp"></jsp:include>

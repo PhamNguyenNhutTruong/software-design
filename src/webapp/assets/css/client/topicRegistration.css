@@ -94,5 +94,5 @@ table tr th a {
 }
 
 .hide_element {
-    visibility: hidden;
+    visibility: hidden="true";
 }

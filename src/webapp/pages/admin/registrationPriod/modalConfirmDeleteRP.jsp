@@ -6,7 +6,7 @@
 <!-- Modal -->
 <form method="get" action="<%=context %>/admin/registration-priods/delete/">
 	<div class="modal fade" id="modalConfirmDeleteRP" tabindex="-1"
-		aria-labelledby="exampleModalLabel" aria-hidden="true">
+		aria-labelledby="exampleModalLabel" aria-hidden="true"="true">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -18,7 +18,7 @@
 				</div>
 				<div class="modal-body">This action can't be restored. Do you
 					want to continue?</div>
-				<input type="text" id="registration-period-id" name="registration-period-id" class="form-control" value="${param.registrationPeriodId}" hidden=""/>
+				<input type="text" id="registration-period-id" name="registration-period-id" class="form-control" value="${param.registrationPeriodId}" hidden="true"=""/>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-secondary"
 						data-bs-dismiss="modal">Close</button>

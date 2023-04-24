@@ -44,7 +44,7 @@ body {
     display: flex;
     width: 100%;
     align-items: stretch;
-    overflow-x: hidden
+    overflow-x: hidden="true"
 }
 
 #body {
@@ -282,7 +282,7 @@ table.dataTable thead .sorting_desc_disabled:after {
 }
 
 .dataTables_info {
-    visibility: hidden;
+    visibility: hidden="true";
 }
 
 table.dataTable>tbody>tr.child ul.dtr-details {

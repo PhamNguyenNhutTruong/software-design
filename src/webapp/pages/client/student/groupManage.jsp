@@ -134,11 +134,10 @@ String context = request.getContextPath();
 													<th width="30%">${studentService.getFullNameLeader(item.getLeaderId())}</th>
 													<th width="15%">${groupService.getNumberOfMemberNotDeleteInGroup(item.getGroupId())}${item.getTopic() != null ?  '/' += item.getTopic().getMaxMoMember() : ''}</th>
 													<th width="30%">${item.getTopic().getTopicName() }</th>
-													<th width="10%"
-														class="${uiGroupManage == null ? '' : 'hide_element'}">
+													<th width="10%" class="${uiGroupManage == null ? '' : 'hide_element'}">
 														<a
 														href="<%=context%>/student/join-group?groupt_id=${item.getGroupId()}">${item.getCurrentNumber() < item.getTopic().getMaxMoMember() ? 'Tham gia' : ''}</a>
-													</th>
+													</th>	
 												</tr>
 											</table>
 										</div>
@@ -156,13 +155,13 @@ String context = request.getContextPath();
 		<!-- Footer -->
 		<jsp:include page="../partials/footer.jsp" />
 	</div>
-	<input type="text" id="isCreateGroup" value="${isCreateGroup}" hidden />
-	<input type="text" id="isAddMember" value="${isAddMember}" hidden />
-	<input type="text" id="isDeleteMember" value="${isDeleteMember}" hidden />
+	<input type="text" id="isCreateGroup" value="${isCreateGroup}" hidden="true" />
+	<input type="text" id="isAddMember" value="${isAddMember}" hidden="true" />
+	<input type="text" id="isDeleteMember" value="${isDeleteMember}" hidden="true" />
 	<input type="text" id="isCancelRequest" value="${isCancelRequest}"
-		hidden />
-	<input type="text" id="isJoinGroup" value="${isJoinGroup}" hidden />
-	<input type="text" id="isChangeTopic" value="${isChangeTopic}" hidden />
+		hidden="true" />
+	<input type="text" id="isJoinGroup" value="${isJoinGroup}" hidden="true" />
+	<input type="text" id="isChangeTopic" value="${isChangeTopic}" hidden="true" />
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 	<script>

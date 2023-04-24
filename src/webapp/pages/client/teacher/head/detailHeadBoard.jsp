@@ -152,13 +152,13 @@ String context = request.getContextPath();
 			</div>
 		</main>
 		<input id="addedTeacherBoardStatus"
-			value="${sessionScope.addedTeacherBoardStatus}" hidden /> <input
+			value="${sessionScope.addedTeacherBoardStatus}" hidden="true" /> <input
 			id="addedGroupBoardStatus"
-			value="${sessionScope.addedGroupBoardStatus}" hidden /> <input
+			value="${sessionScope.addedGroupBoardStatus}" hidden="true" /> <input
 			id="deletedTeacherBoardStatus"
-			value="${sessionScope.deletedTeacherBoardStatus}" hidden /> <input
+			value="${sessionScope.deletedTeacherBoardStatus}" hidden="true" /> <input
 			id="deletedGroupBoardStatus"
-			value="${sessionScope.deletedGroupBoardStatus}" hidden />
+			value="${sessionScope.deletedGroupBoardStatus}" hidden="true" />
 		<!-- Modal -->
 		<jsp:include page="../../partials/logoutModal.jsp"></jsp:include>
 		<!-- Footer -->

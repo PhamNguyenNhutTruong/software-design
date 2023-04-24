@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServletResponse;
 import com.courses.dao.TeacherBoardDAO;
 import com.courses.models.Teacher;
 import com.courses.models.TeacherBoard;
-import com.courses.models.Topic;
 import com.courses.services.SuperService;
 
 public class TeacherBoardService extends SuperService{

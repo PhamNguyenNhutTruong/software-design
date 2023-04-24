@@ -45,9 +45,9 @@ String check = (String)request.getAttribute("isAdded");
 									<form class="<%=context%>/teacher/topic-manage/add"
 										method="post">
 										<input type="text" name="topicId" class="form-control"
-											value="<%=td.randomId()%>" hidden /> <input type="text"
+											value="<%=td.randomId()%>" hidden="true" /> <input type="text"
 											name="teacherId" class="form-control"
-											value="${teacher.teacherId}" hidden />
+											value="${teacher.teacherId}" hidden="true" />
 										<div class="mb-3">
 											<label for="site-title" class="form-label form_label">Đợt
 												đăng ký </label> <input type="text" name="registrationPeriodId"
