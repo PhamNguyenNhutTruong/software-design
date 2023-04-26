@@ -7,9 +7,9 @@
 	<div class="col-md-6">
 		<form method="POST" action="update-period">
 			<input type="text" name="registrationPeriodId" class="form-control"
-				hidden value="${rp.getRegistrationPeriodId()}" /> <input
+				hidden="true" value="${rp.getRegistrationPeriodId()}" /> <input
 				type="text" name="isRegistrationTeacher" class="form-control"
-				value="${rp.getIsRegistrationTeacher()}" hidden />
+				value="${rp.getIsRegistrationTeacher()}" hidden="true" />
 
 			<div class="mb-3">
 				<label for="registrationPeriodName" class="form-label">Name</label>

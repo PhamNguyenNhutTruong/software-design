@@ -146,11 +146,11 @@ String context = request.getContextPath();
 		</div>
 	</div>
 	<input id="createdBoardStatus"
-		value="${sessionScope.createdBoardStatus}" hidden />
+		value="${sessionScope.createdBoardStatus}" hidden="true" />
 	<input id="updatedBoardStatus"
-		value="${sessionScope.updatedBoardStatus}" hidden />
+		value="${sessionScope.updatedBoardStatus}" hidden="true" />
 	<input id="isRestoreBoard"
-		value="${sessionScope.isRestoreBoard}" hidden />
+		value="${sessionScope.isRestoreBoard}" hidden="true" />
 		
 	<jsp:include page="./modalCreateBoard.jsp"></jsp:include>
 	<jsp:include page="./modalConfirmDeleteBoard.jsp"></jsp:include>

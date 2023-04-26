@@ -1,7 +1,6 @@
 package com.courses.controllers.client.info;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,7 +10,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.courses.dao.PersonDAO;
 import com.courses.models.Person;
-import com.mysql.cj.xdevapi.JsonParser;
 
 @WebServlet("/teacher/user-profile/update")
 public class UpdateInfoTeacherServlet extends HttpServlet {

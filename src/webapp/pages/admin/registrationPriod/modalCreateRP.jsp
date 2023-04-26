@@ -12,7 +12,7 @@ int isTeacher = type.equals(RoleConstants.TEACHER) ? 1 : 0;
 %>
 
 <div class="modal fade" id="modalCreateRP" tabindex="-1"
-	aria-labelledby="exampleModalLabel" aria-hidden="true"
+	aria-labelledby="exampleModalLabel" aria-hidden="true"="true"
 	data-bs-backdrop="static">
 	<div class="modal-dialog">
 		<div class="modal-content">
@@ -28,10 +28,10 @@ int isTeacher = type.equals(RoleConstants.TEACHER) ? 1 : 0;
 					<div class="col-md-12">
 						<!-- 
 						<input type="text" name="registrationPeriodId"
-							class="form-control" value="RP<%=RandomUtils.randomId()%>" hidden />
+							class="form-control" value="RP<%=RandomUtils.randomId()%>" hidden="true" />
 					 -->
 						<input type="text" name="isRegistrationTeacher"
-							class="form-control" value="<%=isTeacher%>" hidden=""/>
+							class="form-control" value="<%=isTeacher%>" hidden="true"=""/>
 						<div class="mb-3">
 							<label for="registrationPeriodName" class="form-label">Name</label>
 							<!-- 

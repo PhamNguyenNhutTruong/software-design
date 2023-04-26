@@ -93,7 +93,7 @@ String context = request.getContextPath();
 		<!-- Footer -->
 		<jsp:include page="../partials/footer.jsp" />
 	</div>
-	<input type="text" id="isRegistrationTopic" value="${isRegistrationTopic}" hidden />
+	<input type="text" id="isRegistrationTopic" value="${isRegistrationTopic}" hidden="true" />
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 	
 	<script>

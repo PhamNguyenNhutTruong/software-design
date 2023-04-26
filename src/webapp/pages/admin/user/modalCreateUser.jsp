@@ -21,7 +21,7 @@ if (type.equals(RoleConstants.ADMIN)) {
 
 <form method="POST" action="create-user">
 	<div class="modal fade" id="modalCreateUser" tabindex="-1"
-		aria-labelledby="exampleModalLabel" aria-hidden="true"
+		aria-labelledby="exampleModalLabel" aria-hidden="true"="true"
 		data-bs-backdrop="static">
 		<div class="modal-dialog modal-dialog-scrollable">
 			<div class="modal-content">
@@ -36,11 +36,11 @@ if (type.equals(RoleConstants.ADMIN)) {
 				<div class="modal-body">
 					<div class="col-md-12">
 						<input type="text" name="personId" class="form-control"
-							value="PE<%=RandomUtils.randomId()%>" hidden /> <input
+							value="PE<%=RandomUtils.randomId()%>" hidden="true" /> <input
 							type="text" name="id" class="form-control"
-							value="<%=prefix%><%=RandomUtils.randomId()%>" hidden /> <input
+							value="<%=prefix%><%=RandomUtils.randomId()%>" hidden="true" /> <input
 							type="text" name="type" class="form-control" value="${type}"
-							hidden />
+							hidden="true" />
 						<div class="mb-3">
 							<label for="site-title" class="form-label">Full name</label> <input
 								type="text" name="fullname" class="form-control" />
