@@ -52,9 +52,18 @@ String context = request.getContextPath();
 									<a href="<%=context%>/student/group-manage/create-group">Tạo
 										nhóm</a>
 								</h3>
+								
 								<h3
 									class="topic_registration-filter-active topic_registration-message">
 									<a href="<%=context%>/student/group-manage/add-memeber">Thêm
+										thành viên </a>
+									<div
+										class="topic_registration-join-group ${sessionScope.joinGroups == null ? 'hide_element' : '' }">${sessionScope.joinGroups.size()}</div>
+								</h3>
+							
+								<h3
+									class="topic_registration-filter-active topic_registration-message">
+									<a href="#" data-bs-toggle="modal" data-bs-target="#addMemberToGroupModal">Thêm
 										thành viên </a>
 									<div
 										class="topic_registration-join-group ${sessionScope.joinGroups == null ? 'hide_element' : '' }">${sessionScope.joinGroups.size()}</div>
@@ -150,10 +159,63 @@ String context = request.getContextPath();
 				</div>
 			</div>
 		</main>
+		<!-- Button trigger modal -->
+		<!-- Modal -->
+		<div class="modal fade" id="addMemberToGroupModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+			<div class="modal-content">
+			  <div class="modal-header">
+				<h5 class="modal-title" style="font-size: 20px; font-weight: bold">
+				REGISTER GROUP STUDENT
+				</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			  </div>
+			  <div class="modal-body">
+					<div class="mb-3">
+						<label for="studentIdInput" class="form-label">Student ID</label>
+						<input style="font-size: 16px"
+						type="text" class="form-control" id="studentIdInput" placeholder="Enter student ID" required="required">
+					</div>
+					<button type="submit" class="btn btn-primary py-3 addMemberToGroupBtn" style="width: 100%; font-size: 14px">Register</button>
+			  </div>
+			  <div class="modal-footer">
+					<c:if test="${sessionScope.joinGroups != null}">
+					<h3 style="width: 100%; text-align: center;">Danh sách sinh viên xin tham gia vào nhóm</h3>
+					<div class="join__group-container-item" style="width: 100%">
+						<table>
+							<tr>
+								<th width="40%">Họ và tên</th>
+								<th width="40%">Email</th>
+								<th class="hide_element">Xem chi tiết</th>
+							</tr>
+						</table>
+					</div>
+					<c:forEach var="item" items="${sessionScope.joinGroups}">
+						<div class="join__group-container-item" style="width: 100%">
+							<table>
+								<tr>
+									<th width="40%">${item.getStudent().getPerson().getFullName() }</th>
+									<th width="40%">${item.getStudent().getPerson().getEmail() }</th>
+									<th><a href="<%=context %>/add-member-to-group?studentId=${item.getStudent().getStudentId()}" class="highlight_content"> <ion-icon
+												name="checkmark-circle-outline"></ion-icon>
+									</a> <a href="<%=context %>/student/delete-to-group?studentId=${item.getStudent().getStudentId()}" class="highlight_content"> <ion-icon
+												name="close-circle-outline"></ion-icon>
+									</a></th>
+								</tr>
+							</table>
+						</div>
+					</c:forEach>
+				</c:if>
+				  </div>
+				</div>
+			  </div>
+		</div>
 		<!-- Modal -->
 		<jsp:include page="../partials/logoutModal.jsp"></jsp:include>
 		<!-- Footer -->
 		<jsp:include page="../partials/footer.jsp" />
+		
+		
 	</div>
 	<input type="text" id="isCreateGroup" value="${isCreateGroup}" hidden="true" />
 	<input type="text" id="isAddMember" value="${isAddMember}" hidden="true" />
@@ -164,6 +226,43 @@ String context = request.getContextPath();
 	<input type="text" id="isChangeTopic" value="${isChangeTopic}" hidden="true" />
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
+	<script type="text/javascript">
+		let url = window.location.origin;
+		if(window.location.protocol === 'http:') {
+			url = url + '/CoursesRegistrationApp';
+		}
+		url = url + '/add-member-to-group';
+		console.log(url);
+		
+		$('.addMemberToGroupBtn').click(() => {
+			const studentId = $('#studentIdInput').val();
+			console.log(studentId);
+			$.ajax({
+			    url,
+			    type: 'GET',
+			    data: {studentId},
+			    dataType: 'json',
+			    success: function(response) {
+			    	console.log('success');
+			    	const href = window.location.href;
+			    	if(href.contains('delete-memeber')) {
+			    		window.location.href = url;		
+			    	} else {
+			    		location.reload();
+			    	}
+			    },
+			    error: function(xhr) {
+			    	console.log('error');
+			    	const href = window.location.href;
+			    	if(href.includes('delete-memeber')) {
+			    		window.location.href = url;		
+			    	} else {
+			    		location.reload();
+			    	}
+			    }
+			});
+		})
+	</script>
 	<script>
 		const isCreateGroup = $('#isCreateGroup').val();
 		const isAddMember = $('#isAddMember').val();
