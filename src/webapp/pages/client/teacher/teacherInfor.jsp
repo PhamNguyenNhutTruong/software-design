@@ -70,7 +70,7 @@ String context = request.getContextPath();
                         </div>
                         <div class="contact__student" style="padding-bottom: 20px">
                             <div class="img_container">
-                                <img src="https://cdn.tgdd.vn/Files/2019/12/21/1227869/tu-van-chon-mua-ong-kinh-lens-may-anh-de-chup-anh-chan-dung-xoa-phong-14.jpg" alt="">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg?20200913095930" alt="">
                             </div>
                             <h3 class="title backgroud__info_contact">THÔNG TIN LIÊN LẠC</h3>
                             <h3 class="description">* Thông tin liên lạc của giảng viên:</h3>
@@ -161,10 +161,10 @@ String context = request.getContextPath();
 			        data: {...data} ,
 			        success: function (response) {
 			           // You will get response from your PHP page (what you echo or print)
-			           console.log(response);
+					   location.reload();
 			        },
 			        error: function(jqXHR, textStatus, errorThrown) {
-			           console.log(textStatus, errorThrown);
+					   location.reload();
 			        }
 			    });
 			})
