@@ -61,13 +61,13 @@ String context = request.getContextPath();
 										class="topic_registration-join-group ${sessionScope.joinGroups == null ? 'hide_element' : '' }">${sessionScope.joinGroups.size()}</div>
 								</h3>
 							
-								<h3
+								<%-- <h3
 									class="topic_registration-filter-active topic_registration-message">
 									<a href="#" data-bs-toggle="modal" data-bs-target="#addMemberToGroupModal">Thêm
 										thành viên </a>
 									<div
 										class="topic_registration-join-group ${sessionScope.joinGroups == null ? 'hide_element' : '' }">${sessionScope.joinGroups.size()}</div>
-								</h3>
+								</h3> --%>
 								<h3 class="topic_registration-filter-active">
 									<a href="<%=context%>/topic-registration/change-topic">Đổi
 										đề tài</a>

@@ -128,6 +128,7 @@ public class UserService extends SuperService {
 		try {
 			// Get params
 			String personId = this.request.getParameter("personId");
+		System.out.println(personId);
 			String id = this.request.getParameter("id");
 			String fullname = this.request.getParameter("fullname");
 			String email = this.request.getParameter("email");
