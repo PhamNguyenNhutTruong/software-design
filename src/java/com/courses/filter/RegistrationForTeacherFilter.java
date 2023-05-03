@@ -20,7 +20,7 @@ import com.courses.dao.RegistrationPeriodDAO;
 import com.courses.models.RegistrationPeriod;
 import com.courses.utils.helper.RandomUtils;
 
-@WebFilter(urlPatterns = { "/teacher/topic-manage/add", "/teacher/board/*", "/teacher/approval/*" })
+//@WebFilter(urlPatterns = { "/teacher/topic-manage/add", "/teacher/board/*", "/teacher/approval/*" })
 public class RegistrationForTeacherFilter extends HttpFilter implements Filter {
 
 	private static final long serialVersionUID = 1L;

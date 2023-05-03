@@ -13,6 +13,7 @@ String context = request.getContextPath();
 <title>Thêm thành viên hội đồng - Đăng ký đề tài</title>
 </head>
 <body>
+	<jsp:include page="../../partials/header.jsp" />
 	<div class="form__contain">
 		<form action="" method="POST">
 			<input name="boardId" value="${boardId}" hidden="true" />
@@ -32,6 +33,7 @@ String context = request.getContextPath();
 			<button type="submit" class="registerbutton">Submit</button>
 		</form>
 	</div>
-
+	<jsp:include page="../../partials/footer.jsp" />
+	<jsp:include page="../../partials/logoutModal.jsp"></jsp:include>
 </body>
 </html>
