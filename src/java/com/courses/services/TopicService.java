@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.courses.dao.GroupStudentDAO;
 import com.courses.dao.TeacherDAO;
 import com.courses.dao.TopicDAO;
 import com.courses.models.GroupStudent;
@@ -26,7 +27,6 @@ public class TopicService extends SuperService {
 	private static TopicDAO topicDAO = new TopicDAO();
 	private static GroupStudentDAO groupDAO = new GroupStudentDAO();
 	private static TeacherDAO teacherDAO = new TeacherDAO();
-	TeacherDAO teacherDAO = new TeacherDAO();
 
 	public TopicService(HttpServletRequest request, HttpServletResponse response) {
 		super(request, response);
