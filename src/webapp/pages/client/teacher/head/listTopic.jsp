@@ -67,7 +67,7 @@ String context = request.getContextPath();
 			</div>
 		</main>
 		<input id="acceptApprovalTopicStatus"
-			value="${sessionScope.acceptApprovalTopicStatus}"  hidden/>
+			value="${sessionScope.acceptApprovalTopicStatus}"  hidden="true"/>
 
 		<!-- Footer -->
 		<jsp:include page="../../partials/logoutModal.jsp"></jsp:include>

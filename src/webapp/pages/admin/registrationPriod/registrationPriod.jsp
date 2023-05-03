@@ -160,13 +160,13 @@ String context = request.getContextPath();
 	</div>
 
 	<input type="text" id="isCreateRegistrationPeriod"
-		value="${sessionScope.isCreateRegistrationPeriod}" hidden />
+		value="${sessionScope.isCreateRegistrationPeriod}" hidden="true" />
 	<input type="text" id="isRegistrationPeriodUpdate"
-		value="${sessionScope.isRegistrationPeriodUpdate}" hidden />
+		value="${sessionScope.isRegistrationPeriodUpdate}" hidden="true" />
 	<input type="text" id="isSoftDeleteRegistrationPeriod"
-		value="${sessionScope.isSoftDeleteRegistrationPeriod}" hidden />
+		value="${sessionScope.isSoftDeleteRegistrationPeriod}" hidden="true" />
 	<input type="text" id="isRestoreRegistrationPeriod"
-		value="${sessionScope.isRestoreRegistrationPeriod}" hidden />
+		value="${sessionScope.isRestoreRegistrationPeriod}" hidden="true" />
 
 	<jsp:include page="./modalCreateRP.jsp"></jsp:include>
 	<jsp:include page="./modalConfirmDeleteRP.jsp"></jsp:include>

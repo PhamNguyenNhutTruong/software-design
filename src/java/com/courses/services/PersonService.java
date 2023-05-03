@@ -15,16 +15,16 @@ public class PersonService  extends SuperService{
 		personDAO = new PersonDAO();
 	}
 	
-	public void updatePerson()  {
-		try {
-			super.setEncoding();
-			String fullname = (String)request.getAttribute("fullname");
-			String phonenumber = (String) request.getAttribute("phonenumber");
-			String address = (String) request.getAttribute("address");
-			String desc = (String) request.getAttribute("desc");
-		} catch (UnsupportedEncodingException e) {
-			e.printStackTrace();
-		}
-	}
+//	public void updatePerson()  {
+//		try {
+//			super.setEncoding();
+//			String fullname = (String)request.getAttribute("fullname");
+//			String phonenumber = (String) request.getAttribute("phonenumber");
+//			String address = (String) request.getAttribute("address");
+//			String desc = (String) request.getAttribute("desc");
+//		} catch (UnsupportedEncodingException e) {
+//			e.printStackTrace();
+//		}
+//	}
 
 }

@@ -12,7 +12,7 @@ String context = request.getContextPath();
 %>
 
 <div class="modal fade" id="modalCreateRP" tabindex="-1"
-	aria-labelledby="exampleModalLabel" aria-hidden="true"
+	aria-labelledby="exampleModalLabel" aria-hidden="true"="true"
 	data-bs-backdrop="static">
 	<div class="modal-dialog modal-dialog-scrollable">
 		<div class="modal-content">

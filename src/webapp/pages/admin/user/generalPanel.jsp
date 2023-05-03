@@ -6,8 +6,8 @@
 	<div class="col-md-6">
 		<form method="POST" action="update-general">
 			<input type="text" name="personId" class="form-control"
-				value="${user.getPerson().getPersonId()}" hidden /> <input
-				type="text" name="type" class="form-control" value="${type}" hidden />
+				value="${user.getPerson().getPersonId()}" hidden="true" /> <input
+				type="text" name="type" class="form-control" value="${type}" hidden="true" />
 			<div class="mb-3">
 				<label for="site-title" class="form-label">Full name</label> <input
 					type="text" name="fullname" class="form-control"

@@ -34,7 +34,7 @@ body, html {
 	-webkit-box-pack: center;
 	-ms-flex-pack: center;
 	justify-content: center;
-	overflow: hidden;
+	overflow: hidden="true";
 	min-width: 100%;
 	min-height: 100vh;
 }

@@ -16,7 +16,7 @@
     align-self: center;
     border: 1px solid var(--border-color);
     border-radius: 4px;
-    overflow: hidden;
+    overflow: hidden="true";
 }
 
 .login-label {

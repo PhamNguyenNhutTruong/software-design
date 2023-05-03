@@ -12,13 +12,13 @@ import javax.servlet.http.HttpServletResponse;
 import com.courses.dao.PersonDAO;
 import com.courses.models.Person;
 
-@WebServlet("/teacher/user-profile/update")
-public class UpdateInfoTeacherServlet extends HttpServlet {
+@WebServlet("/student/user-profile/update")
+public class UpdateInfoStudentServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	PersonDAO personDAO = null;
        	
-    public UpdateInfoTeacherServlet() {
+    public UpdateInfoStudentServlet() {
         super();
         personDAO = new PersonDAO();
     }

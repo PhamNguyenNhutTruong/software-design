@@ -13,6 +13,7 @@ String context = request.getContextPath();
 <title>Trang chủ - Đăng ký thành viên</title>
 </head>
 <body>
+	<jsp:include page="../partials/header.jsp" />
 	<div class="form__contain">
 		<form action="<%=context %>/add-member-to-group" method="get">
 			<h1>Register Group Student</h1>
@@ -59,6 +60,8 @@ String context = request.getContextPath();
 			</c:if>
 		</form>
 	</div>
+	<jsp:include page="../partials/footer.jsp" />
+	<jsp:include page="../partials/logoutModal.jsp"></jsp:include>
 	<script type="module"
 		src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 	<script nomodule

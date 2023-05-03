@@ -70,7 +70,7 @@ String context = request.getContextPath();
                         </div>
                         <div class="contact__student" style="padding-bottom: 20px">
                             <div class="img_container">
-                                <img src="https://cdn.tgdd.vn/Files/2019/12/21/1227869/tu-van-chon-mua-ong-kinh-lens-may-anh-de-chup-anh-chan-dung-xoa-phong-14.jpg" alt="">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg?20200913095930" alt="">
                             </div>
                             <h3 class="title backgroud__info_contact">THÔNG TIN LIÊN LẠC</h3>
                             <h3 class="description">* Thông tin liên lạc của giảng viên:</h3>
@@ -93,7 +93,7 @@ String context = request.getContextPath();
     </div>
 </main>
 	<!-- Modal update profile teacher-->
-	<div class="modal fade" id="updateProfile" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal fade" id="updateProfile" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"="true">
 	  <div class="modal-dialog">
 		<div class="modal-content">
 		  <div class="modal-header">
@@ -101,7 +101,7 @@ String context = request.getContextPath();
 			<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 		  </div>
 		  <div class="modal-body">
-			  <input type="text" hidden="true" class="form-control" id="personId"
+			  <input type="text" hidden="true"="true" class="form-control" id="personId"
 			  style="font-size: 14px" value="${person.getPersonId()}">
 			<div class="mb-3">
 			  <label for="fullname" class="form-label">Họ và tên</label>
@@ -161,10 +161,10 @@ String context = request.getContextPath();
 			        data: {...data} ,
 			        success: function (response) {
 			           // You will get response from your PHP page (what you echo or print)
-			           console.log(response);
+					   location.reload();
 			        },
 			        error: function(jqXHR, textStatus, errorThrown) {
-			           console.log(textStatus, errorThrown);
+					   location.reload();
 			        }
 			    });
 			})

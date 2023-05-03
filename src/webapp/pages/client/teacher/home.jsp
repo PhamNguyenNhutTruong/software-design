@@ -104,7 +104,7 @@ String context = request.getContextPath();
 			</div>
 		</main>
 		<input id="registrationPeriodForTeacherStatus"
-			value="${sessionScope.registrationPeriodForTeacherStatus}" hidden />
+			value="${sessionScope.registrationPeriodForTeacherStatus}" hidden="true" />
 		<!-- Modal -->
 		<jsp:include page="../partials/logoutModal.jsp"></jsp:include>
 		<!-- Footer -->

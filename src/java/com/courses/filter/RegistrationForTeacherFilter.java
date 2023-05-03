@@ -20,7 +20,6 @@ import com.courses.dao.RegistrationPeriodDAO;
 import com.courses.models.RegistrationPeriod;
 import com.courses.utils.helper.RandomUtils;
 
-@WebFilter(urlPatterns = { "/test-haha"})
 //@WebFilter(urlPatterns = { "/teacher/topic-manage/add", "/teacher/board/*", "/teacher/approval/*" })
 public class RegistrationForTeacherFilter extends HttpFilter implements Filter {
 

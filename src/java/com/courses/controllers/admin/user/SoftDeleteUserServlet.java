@@ -10,8 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.courses.dao.PersonDAO;
-import com.courses.models.Person;
-import com.courses.models.Student;
 import com.courses.services.admin.user.UserService;
 
 @WebServlet(urlPatterns = { "/admin/users/delete", "/admin/users/delete/" })
