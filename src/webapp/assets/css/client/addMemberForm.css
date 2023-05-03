@@ -8,8 +8,8 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 100%;
-	background-color: #f4f3f3;
+	padding-top: 20px;
+	padding-bottom: 20px;
 }
 
 .form__contain form {
